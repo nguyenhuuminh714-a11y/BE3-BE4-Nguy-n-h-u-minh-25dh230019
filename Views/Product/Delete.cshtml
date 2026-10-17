@@ -1,0 +1,30 @@
+﻿@model BE2__ADMINLAYOUT.Models.Product
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<p>Bạn có chắc chắn muốn xóa sản phẩm này không?</p>
+
+<dl class="dl-horizontal">
+    <dt>Tên sản phẩm</dt>
+    <dd>@Model.ProductName</dd>
+
+    <dt>Giá</dt>
+    <dd>@Model.ProductPrice.ToString("N0") VNĐ</dd>
+</dl>
+
+@using (Html.BeginForm("Delete", "Products",
+    new { id = Model.ProductID }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-danger">
+        Xác nhận xóa
+    </button>
+
+    @Html.ActionLink("Hủy", "Index", null,
+        new { @class = "btn btn-default" })
+}

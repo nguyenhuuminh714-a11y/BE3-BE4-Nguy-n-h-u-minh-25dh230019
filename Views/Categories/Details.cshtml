@@ -1,0 +1,22 @@
+﻿@model BE2__ADMINLAYOUT.Models.Category
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+<h2>Chi tiết danh mục</h2>
+
+<dl class="dl-horizontal">
+    <dt>Mã danh mục</dt>
+    <dd>@Model.CategoryID</dd>
+
+    <dt>Tên danh mục</dt>
+    <dd>@Model.CategoryName</dd>
+</dl>
+
+@Html.ActionLink("Sửa", "Edit", new { id = Model.CategoryID },
+    new { @class = "btn btn-warning" })
+
+@Html.ActionLink("Quay lại", "Index", null,
+    new { @class = "btn btn-default" })

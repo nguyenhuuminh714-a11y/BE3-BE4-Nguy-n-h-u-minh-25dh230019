@@ -1,0 +1,33 @@
+﻿@model BE2__ADMINLAYOUT.Models.Category
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+<h2>Cập nhật danh mục</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.CategoriesID)
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.CategoriesName, "Tên danh mục")
+
+            @Html.EditorFor(m => m.CategoriesName,
+                new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(m => m.CategoriesName,
+                "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        @Html.ActionLink("Quay lại", "Index", null,
+            new { @class = "btn btn-default" })
+    </div>
+}

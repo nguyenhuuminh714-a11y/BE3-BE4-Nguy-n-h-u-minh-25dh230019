@@ -1,0 +1,49 @@
+﻿@model BE2__ADMINLAYOUT.Models.Product
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+<h2>Chỉnh sửa sản phẩm</h2>
+
+@using (Html.BeginForm("Edit", "Products",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ProductID)
+    @Html.HiddenFor(m => m.ProductImage)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductName, "Tên sản phẩm")
+        @Html.EditorFor(m => m.ProductName,
+            new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CategoryID, "Danh mục")
+        @Html.DropDownList("CategoryID", null, "-- Chọn danh mục --",
+            new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductDescription, "Mô tả")
+        @Html.TextAreaFor(m => m.ProductDescription,
+            new { @class = "form-control", rows = 4 })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductPrice, "Giá")
+        @Html.EditorFor(m => m.ProductPrice,
+            new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+
+    <div class="form-group">
+        <label>Chọn ảnh mới nếu cần</label>
+        <input type="file" name="UploadImg" accept="image/*" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    @Html.ActionLink("Quay lại", "Index", null,
+        new { @class = "btn btn-default" })
+}

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - MyStore Admin</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="admin-navbar">
+        <a href="@Url.Action(" Index", "Home" , new { area="Admin" })">
+            MyStore Admin
+        </a>
+
+        <div>
+            <a href="@Url.Action(" Index", "Categories" , new { area="Admin" })">
+                Danh mục
+            </a>
+            <a href="@Url.Action(" Index", "Products" , new { area="Admin" })">
+                Sản phẩm
+            </a>
+            <a href="@Url.Action(" Index", "Customers" , new { area="Admin" })">
+                Khách hàng
+            </a>
+            <a href="@Url.Action(" Index", "Orders" , new { area="Admin" })">
+                Đơn hàng
+            </a>
+            <a href="@Url.Action(" Index", "Home" , new { area="" })">
+                Về trang chủ
+            </a>
+        </div>
+    </nav>
+
+    <main class="container body-content">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <p>MyStore Administration</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

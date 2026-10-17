@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37710.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE2_ ADMINLAYOUT", "BE2_ ADMINLAYOUT.csproj", "{0AE5A545-F9E0-4939-B153-D34466B3951D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE5A545-F9E0-4939-B153-D34466B3951D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE5A545-F9E0-4939-B153-D34466B3951D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE5A545-F9E0-4939-B153-D34466B3951D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE5A545-F9E0-4939-B153-D34466B3951D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D201833-8225-4382-9407-168DC5849380}
+	EndGlobalSection
+EndGlobal
